@@ -1,0 +1,494 @@
+\doxysection{src/f\+\_\+pennos.h File Reference}
+\hypertarget{f__pennos_8h}{}\label{f__pennos_8h}\index{src/f\_pennos.h@{src/f\_pennos.h}}
+
+
+Header file for our f functions.  
+
+
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/time.\+h$>$}\newline
+{\ttfamily \#include $<$ucontext.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}pcb.\+h"{}}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+{\ttfamily \#include "{}pennfat.\+h"{}}\newline
+Include dependency graph for f\+\_\+pennos.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structFileDescriptor}{File\+Descriptor}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{f__pennos_8h_ae4777ede3ed2173c78fab7798ad6eddb}\label{f__pennos_8h_ae4777ede3ed2173c78fab7798ad6eddb} 
+\#define {\bfseries MAX\+\_\+\+OPEN\+\_\+\+FILES}~1024
+\begin{DoxyCompactList}\small\item\em Maximum number of open files allowed in the file system. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_a0df727075646d921d7c4222516603dbe}\label{f__pennos_8h_a0df727075646d921d7c4222516603dbe} 
+\#define {\bfseries STDIN\+\_\+\+FD}~0
+\begin{DoxyCompactList}\small\item\em File descriptor value for standard input. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_abec418e88ba92b9f1c67f50cd0057298}\label{f__pennos_8h_abec418e88ba92b9f1c67f50cd0057298} 
+\#define {\bfseries STDOUT\+\_\+\+FD}~1
+\begin{DoxyCompactList}\small\item\em File descriptor value for standard output. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_a65bc715eea79704953e87d562e15f366}\label{f__pennos_8h_a65bc715eea79704953e87d562e15f366} 
+\#define {\bfseries F\+\_\+\+WRITE}~1
+\begin{DoxyCompactList}\small\item\em File write mode constant. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_ab86e09c9385938942f76becf2c2aae95}\label{f__pennos_8h_ab86e09c9385938942f76becf2c2aae95} 
+\#define {\bfseries F\+\_\+\+READ}~2
+\begin{DoxyCompactList}\small\item\em File read mode constant. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_a298b91deec2bed5a79398eedd81cd754}\label{f__pennos_8h_a298b91deec2bed5a79398eedd81cd754} 
+\#define {\bfseries F\+\_\+\+APPEND}~3
+\begin{DoxyCompactList}\small\item\em File append mode constant. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_afb8219f32ea60020d020661d3cd78dcb}\label{f__pennos_8h_afb8219f32ea60020d020661d3cd78dcb} 
+\#define {\bfseries F\+\_\+\+SEEK\+\_\+\+SET}~0
+\begin{DoxyCompactList}\small\item\em File seek set mode constant. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_ab834bd767e69151af6c618d67677c6f4}\label{f__pennos_8h_ab834bd767e69151af6c618d67677c6f4} 
+\#define {\bfseries F\+\_\+\+SEEK\+\_\+\+CUR}~1
+\begin{DoxyCompactList}\small\item\em File seek current mode constant. \end{DoxyCompactList}\item 
+\Hypertarget{f__pennos_8h_aae71327c6d0dff2f26623cb1ee27f3e1}\label{f__pennos_8h_aae71327c6d0dff2f26623cb1ee27f3e1} 
+\#define {\bfseries F\+\_\+\+SEEK\+\_\+\+END}~2
+\begin{DoxyCompactList}\small\item\em File seek end mode constant. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433}{fd\+\_\+type}} \{ \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a2c3ae3e000d2803ae5cdae5cdbb71e5d}{FD\+\_\+\+UNINIT}}
+, \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433aa08b6612f6b569a693ebdabd97c07628}{FD\+\_\+\+STDIN}}
+, \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433ae00a7fa065e3c4c86d655fce8bac47c0}{FD\+\_\+\+STDOUT}}
+, \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a8903b83db3bc49f288a479cef0a5edb5}{FD\+\_\+\+FILE}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration representing the type of file descriptor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{f__pennos_8h_a0745360c39f692a210604e1108fade1c}{f\+\_\+open}} (const char \texorpdfstring{$\ast$}{*}fname, int mode)
+\begin{DoxyCompactList}\small\item\em Open a file with the specified mode. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_ac0d4f7afac0b7885e6435e2334bc09cf}{f\+\_\+close}} (int fd)
+\begin{DoxyCompactList}\small\item\em Close the file referenced by the file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4}{f\+\_\+unlink}} (const char \texorpdfstring{$\ast$}{*}fname)
+\begin{DoxyCompactList}\small\item\em Remove the specified file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_aad4a33343238e11c0fc0d20e09164e5f}{f\+\_\+read}} (int fd, int n, char \texorpdfstring{$\ast$}{*}buf)
+\begin{DoxyCompactList}\small\item\em Read bytes from the file referenced by the file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a2108c5a353c3855dbe6a70fae48ba759}{f\+\_\+write}} (int fd, const char \texorpdfstring{$\ast$}{*}str, int n)
+\begin{DoxyCompactList}\small\item\em Write bytes to the file referenced by the file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a08b2b52af8b3dacec0592367c4fed47d}{f\+\_\+lseek}} (int fd, int offset, int whence)
+\begin{DoxyCompactList}\small\item\em Reposition the file pointer for the specified file descriptor. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_ad277516396ae7e6e2afaccd0bfc22ab3}{f\+\_\+mount}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Mounts a Penn\+FAT filesystem by loading its FAT into memory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_acba6e204fe45cd75ec4b72e5d8519de6}{f\+\_\+touch}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Creates or updates the timestamp of the specified files. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_ab0c48d7d205849c32740e404ed93e7d8}{f\+\_\+rm}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Removes the specified file or files from the filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a6881273eeb3aa5ba17180ed18282f40c}{f\+\_\+mv}} (const char \texorpdfstring{$\ast$}{*}src, const char \texorpdfstring{$\ast$}{*}dst)
+\begin{DoxyCompactList}\small\item\em Renames a source file to a destination file in the filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a230b18c19e3de8ea60745564bc2baf3c}{f\+\_\+cp}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Copies files from the filesystem to a destination in the host OS. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a53188b844eb90ec6abcc26c4aba5db2c}{f\+\_\+cat}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Concatenates and prints files to stdout or overwrites/creates an output file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_aa43ee7a22516bb688fa8a130e821ea8c}{f\+\_\+ls}} ()
+\begin{DoxyCompactList}\small\item\em List the specified file or all files in the current directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_ae74c752c32d9454a1901adcd02241079}{f\+\_\+chmod}} (const char \texorpdfstring{$\ast$}{*}mode, const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Changes the permissions of the specified filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a3f8010bf3c080ef9349a3f2128afd347}{f\+\_\+seek}} (FILE \texorpdfstring{$\ast$}{*}stream, long int offset, int whence)
+\begin{DoxyCompactList}\small\item\em Move the file position indicator to a specified location in the file. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{f__pennos_8h_ae1c343abf607a116f078355864532956}{f\+\_\+gets}} (char \texorpdfstring{$\ast$}{*}str, int n, FILE \texorpdfstring{$\ast$}{*}stream)
+\begin{DoxyCompactList}\small\item\em Reads a line from the specified stream and stores it into a string. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{f__pennos_8h_a78d9a716d431fd79821c1d7ec6394167}{f\+\_\+find\+\_\+file}} (const char \texorpdfstring{$\ast$}{*}fname, \mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Search for a file with the specified name from our file system and populate the result in the provided \doxylink{structdirectory__entry}{directory\+\_\+entry} structure. \end{DoxyCompactList}\item 
+char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{f__pennos_8h_affa47270aa310991b64f4c377baf3986}{f\+\_\+strtok}} (char \texorpdfstring{$\ast$}{*}str, const char \texorpdfstring{$\ast$}{*}delim)
+\begin{DoxyCompactList}\small\item\em Tokenize a string into substrings based on the specified delimiter characters ({\ttfamily delim}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for our f functions. 
+
+This file defines functions and data structures for a simple file system implementation, including file operations like open, close, read, write, and directory-\/related operations. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433}\label{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433} 
+\index{f\_pennos.h@{f\_pennos.h}!fd\_type@{fd\_type}}
+\index{fd\_type@{fd\_type}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{fd\_type}{fd\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433}{fd\+\_\+type}}}
+
+
+
+Enumeration representing the type of file descriptor. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FD\_UNINIT@{FD\_UNINIT}!f\_pennos.h@{f\_pennos.h}}\index{f\_pennos.h@{f\_pennos.h}!FD\_UNINIT@{FD\_UNINIT}}}\Hypertarget{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a2c3ae3e000d2803ae5cdae5cdbb71e5d}\label{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a2c3ae3e000d2803ae5cdae5cdbb71e5d} 
+FD\+\_\+\+UNINIT&Uninitialized file descriptor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FD\_STDIN@{FD\_STDIN}!f\_pennos.h@{f\_pennos.h}}\index{f\_pennos.h@{f\_pennos.h}!FD\_STDIN@{FD\_STDIN}}}\Hypertarget{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433aa08b6612f6b569a693ebdabd97c07628}\label{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433aa08b6612f6b569a693ebdabd97c07628} 
+FD\+\_\+\+STDIN&Standard input file descriptor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FD\_STDOUT@{FD\_STDOUT}!f\_pennos.h@{f\_pennos.h}}\index{f\_pennos.h@{f\_pennos.h}!FD\_STDOUT@{FD\_STDOUT}}}\Hypertarget{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433ae00a7fa065e3c4c86d655fce8bac47c0}\label{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433ae00a7fa065e3c4c86d655fce8bac47c0} 
+FD\+\_\+\+STDOUT&Standard output file descriptor. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FD\_FILE@{FD\_FILE}!f\_pennos.h@{f\_pennos.h}}\index{f\_pennos.h@{f\_pennos.h}!FD\_FILE@{FD\_FILE}}}\Hypertarget{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a8903b83db3bc49f288a479cef0a5edb5}\label{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433a8903b83db3bc49f288a479cef0a5edb5} 
+FD\+\_\+\+FILE&Regular file descriptor. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{f__pennos_8h_a53188b844eb90ec6abcc26c4aba5db2c}\label{f__pennos_8h_a53188b844eb90ec6abcc26c4aba5db2c} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_cat@{f\_cat}}
+\index{f\_cat@{f\_cat}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_cat()}{f\_cat()}}
+{\footnotesize\ttfamily int f\+\_\+cat (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Concatenates and prints files to stdout or overwrites/creates an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ae74c752c32d9454a1901adcd02241079}\label{f__pennos_8h_ae74c752c32d9454a1901adcd02241079} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_chmod@{f\_chmod}}
+\index{f\_chmod@{f\_chmod}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_chmod()}{f\_chmod()}}
+{\footnotesize\ttfamily int f\+\_\+chmod (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{mode,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Changes the permissions of the specified filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The new permissions mode. \\
+\hline
+{\em fs\+\_\+name} & The name of the filesystem.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ac0d4f7afac0b7885e6435e2334bc09cf}\label{f__pennos_8h_ac0d4f7afac0b7885e6435e2334bc09cf} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_close@{f\_close}}
+\index{f\_close@{f\_close}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_close()}{f\_close()}}
+{\footnotesize\ttfamily int f\+\_\+close (\begin{DoxyParamCaption}\item[{int}]{fd }\end{DoxyParamCaption})}
+
+
+
+Close the file referenced by the file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file descriptor of the open file.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a230b18c19e3de8ea60745564bc2baf3c}\label{f__pennos_8h_a230b18c19e3de8ea60745564bc2baf3c} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_cp@{f\_cp}}
+\index{f\_cp@{f\_cp}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_cp()}{f\_cp()}}
+{\footnotesize\ttfamily int f\+\_\+cp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Copies files from the filesystem to a destination in the host OS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cp\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a78d9a716d431fd79821c1d7ec6394167}\label{f__pennos_8h_a78d9a716d431fd79821c1d7ec6394167} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_find\_file@{f\_find\_file}}
+\index{f\_find\_file@{f\_find\_file}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_find\_file()}{f\_find\_file()}}
+{\footnotesize\ttfamily int f\+\_\+find\+\_\+file (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname,  }\item[{\mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} \texorpdfstring{$\ast$}{*}}]{result }\end{DoxyParamCaption})}
+
+
+
+Search for a file with the specified name from our file system and populate the result in the provided \doxylink{structdirectory__entry}{directory\+\_\+entry} structure. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & The name of the file to search for. \\
+\hline
+{\em result} & Pointer to the \doxylink{structdirectory__entry}{directory\+\_\+entry} structure to store info. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, it returns location of directory; otherwise, it returns -\/1 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ae1c343abf607a116f078355864532956}\label{f__pennos_8h_ae1c343abf607a116f078355864532956} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_gets@{f\_gets}}
+\index{f\_gets@{f\_gets}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_gets()}{f\_gets()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} f\+\_\+gets (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{n,  }\item[{FILE \texorpdfstring{$\ast$}{*}}]{stream }\end{DoxyParamCaption})}
+
+
+
+Reads a line from the specified stream and stores it into a string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Pointer to the destination array where the line is stored. \\
+\hline
+{\em n} & Maximum number of characters to be read (including null character). \\
+\hline
+{\em stream} & A pointer to the FILE structure representing the file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+On success, {\ttfamily str} is returned; on error, NULL is returned. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_aa43ee7a22516bb688fa8a130e821ea8c}\label{f__pennos_8h_aa43ee7a22516bb688fa8a130e821ea8c} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_ls@{f\_ls}}
+\index{f\_ls@{f\_ls}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_ls()}{f\_ls()}}
+{\footnotesize\ttfamily int f\+\_\+ls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+List the specified file or all files in the current directory. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a08b2b52af8b3dacec0592367c4fed47d}\label{f__pennos_8h_a08b2b52af8b3dacec0592367c4fed47d} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_lseek@{f\_lseek}}
+\index{f\_lseek@{f\_lseek}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_lseek()}{f\_lseek()}}
+{\footnotesize\ttfamily int f\+\_\+lseek (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+
+
+Reposition the file pointer for the specified file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file descriptor of the open file. \\
+\hline
+{\em offset} & The offset relative to the specified whence. \\
+\hline
+{\em whence} & The reference position for repositioning (F\+\_\+\+SEEK\+\_\+\+SET, F\+\_\+\+SEEK\+\_\+\+CUR, F\+\_\+\+SEEK\+\_\+\+END).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ad277516396ae7e6e2afaccd0bfc22ab3}\label{f__pennos_8h_ad277516396ae7e6e2afaccd0bfc22ab3} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_mount@{f\_mount}}
+\index{f\_mount@{f\_mount}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_mount()}{f\_mount()}}
+{\footnotesize\ttfamily int f\+\_\+mount (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Mounts a Penn\+FAT filesystem by loading its FAT into memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the filesystem to be mounted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a6881273eeb3aa5ba17180ed18282f40c}\label{f__pennos_8h_a6881273eeb3aa5ba17180ed18282f40c} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_mv@{f\_mv}}
+\index{f\_mv@{f\_mv}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_mv()}{f\_mv()}}
+{\footnotesize\ttfamily int f\+\_\+mv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{dst }\end{DoxyParamCaption})}
+
+
+
+Renames a source file to a destination file in the filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The source file to be renamed. \\
+\hline
+{\em dst} & The destination file name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a0745360c39f692a210604e1108fade1c}\label{f__pennos_8h_a0745360c39f692a210604e1108fade1c} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_open@{f\_open}}
+\index{f\_open@{f\_open}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_open()}{f\_open()}}
+{\footnotesize\ttfamily int f\+\_\+open (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname,  }\item[{int}]{mode }\end{DoxyParamCaption})}
+
+
+
+Open a file with the specified mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & The name of the file to be opened. \\
+\hline
+{\em mode} & The mode of opening the file (F\+\_\+\+WRITE, F\+\_\+\+READ, F\+\_\+\+APPEND).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a file descriptor on success, or a negative value on error. Error codes\+: -\/1\+: Failed to open file. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_aad4a33343238e11c0fc0d20e09164e5f}\label{f__pennos_8h_aad4a33343238e11c0fc0d20e09164e5f} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_read@{f\_read}}
+\index{f\_read@{f\_read}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_read()}{f\_read()}}
+{\footnotesize\ttfamily int f\+\_\+read (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{int}]{n,  }\item[{char \texorpdfstring{$\ast$}{*}}]{buf }\end{DoxyParamCaption})}
+
+
+
+Read bytes from the file referenced by the file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file descriptor of the open file. \\
+\hline
+{\em n} & The number of bytes to read. \\
+\hline
+{\em buf} & The buffer to store the read bytes.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes read on success, 0 if EOF is reached, or a negative number on error. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ab0c48d7d205849c32740e404ed93e7d8}\label{f__pennos_8h_ab0c48d7d205849c32740e404ed93e7d8} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_rm@{f\_rm}}
+\index{f\_rm@{f\_rm}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_rm()}{f\_rm()}}
+{\footnotesize\ttfamily int f\+\_\+rm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Removes the specified file or files from the filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the file or files to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a3f8010bf3c080ef9349a3f2128afd347}\label{f__pennos_8h_a3f8010bf3c080ef9349a3f2128afd347} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_seek@{f\_seek}}
+\index{f\_seek@{f\_seek}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_seek()}{f\_seek()}}
+{\footnotesize\ttfamily int f\+\_\+seek (\begin{DoxyParamCaption}\item[{FILE \texorpdfstring{$\ast$}{*}}]{stream,  }\item[{long int}]{offset,  }\item[{int}]{whence }\end{DoxyParamCaption})}
+
+
+
+Move the file position indicator to a specified location in the file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stream} & A pointer to the FILE structure representing the file. \\
+\hline
+{\em offset} & The number of bytes to offset from the specified location. \\
+\hline
+{\em whence} & The reference position for the offset (SEEK\+\_\+\+SET, SEEK\+\_\+\+CUR, or SEEK\+\_\+\+END). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Upon success, it returns 0; otherwise, it returns -\/1 to indicate an error. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_affa47270aa310991b64f4c377baf3986}\label{f__pennos_8h_affa47270aa310991b64f4c377baf3986} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_strtok@{f\_strtok}}
+\index{f\_strtok@{f\_strtok}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_strtok()}{f\_strtok()}}
+{\footnotesize\ttfamily char \texorpdfstring{$\ast$}{*} f\+\_\+strtok (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{delim }\end{DoxyParamCaption})}
+
+
+
+Tokenize a string into substrings based on the specified delimiter characters ({\ttfamily delim}). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to be tokenized. \\
+\hline
+{\em delim} & The set of delimiter characters. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A pointer to the next token in the string; NULL if no more tokens are found. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_acba6e204fe45cd75ec4b72e5d8519de6}\label{f__pennos_8h_acba6e204fe45cd75ec4b72e5d8519de6} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_touch@{f\_touch}}
+\index{f\_touch@{f\_touch}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_touch()}{f\_touch()}}
+{\footnotesize\ttfamily int f\+\_\+touch (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Creates or updates the timestamp of the specified files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}touch\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4}\label{f__pennos_8h_ab641e8e9e3ccd8e299c81ce9c24c0be4} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_unlink@{f\_unlink}}
+\index{f\_unlink@{f\_unlink}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_unlink()}{f\_unlink()}}
+{\footnotesize\ttfamily int f\+\_\+unlink (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname }\end{DoxyParamCaption})}
+
+
+
+Remove the specified file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & The name of the file to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{f__pennos_8h_a2108c5a353c3855dbe6a70fae48ba759}\label{f__pennos_8h_a2108c5a353c3855dbe6a70fae48ba759} 
+\index{f\_pennos.h@{f\_pennos.h}!f\_write@{f\_write}}
+\index{f\_write@{f\_write}!f\_pennos.h@{f\_pennos.h}}
+\doxysubsubsection{\texorpdfstring{f\_write()}{f\_write()}}
+{\footnotesize\ttfamily int f\+\_\+write (\begin{DoxyParamCaption}\item[{int}]{fd,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{str,  }\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Write bytes to the file referenced by the file descriptor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fd} & The file descriptor of the open file. \\
+\hline
+{\em str} & The string containing the bytes to write. \\
+\hline
+{\em n} & The number of bytes to write.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the number of bytes written on success, or a negative value on error. 
+\end{DoxyReturn}

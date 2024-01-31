@@ -1,0 +1,134 @@
+\doxysection{src/errors.h File Reference}
+\hypertarget{errors_8h}{}\label{errors_8h}\index{src/errors.h@{src/errors.h}}
+
+
+Header file for handling errors in Penn\+OS.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for errors.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\+\_\+error}} \{ \newline
+{\bfseries File\+Not\+Found\+Error}
+, {\bfseries Permission\+Error}
+, {\bfseries Command\+Not\+Found\+Error}
+, {\bfseries Process\+Not\+Found\+Error}
+, \newline
+{\bfseries Process\+Spawn\+Error}
+, {\bfseries Argument\+Not\+Found\+Error}
+, {\bfseries Signal\+Not\+Found\+Error}
+, {\bfseries Process\+Wait\+Error}
+, \newline
+{\bfseries Status\+Not\+Found\+Error}
+, {\bfseries PCBNot\+Found\+Error}
+, {\bfseries Process\+Status\+Error}
+, {\bfseries Too\+Many\+Files\+Open\+Error}
+, \newline
+{\bfseries No\+More\+Space\+Error}
+, {\bfseries Invalid\+File\+Descriptor\+Error}
+, {\bfseries File\+Write\+Error}
+, {\bfseries Deque\+Space\+Error}
+, \newline
+{\bfseries Prompt\+Error}
+, {\bfseries File\+Read\+Error}
+, {\bfseries File\+Is\+Open\+Error}
+, {\bfseries Wrong\+Process\+Waited\+Error}
+, \newline
+{\bfseries Number\+Of\+Errors}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of error types in Penn\+OS. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{errors_8h_a426fc668869cc80eca1c9fd1d8f1d8a6}{map\+Enum\+To\+String}} (\mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\+\_\+error}} error)
+\begin{DoxyCompactList}\small\item\em Maps a Penn\+OS error enumeration to its corresponding string representation. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{errors_8h_a128258e4dbbd9ca19559087b553a9bef}{pennos\+\_\+errors}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em External declaration of the array of Penn\+OS error messages. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for handling errors in Penn\+OS. 
+
+This file provides declarations and definitions related to error handling in Penn\+OS, including the enumeration of error types and necessary dependencies. 
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}\label{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1} 
+\index{errors.h@{errors.h}!pennos\_error@{pennos\_error}}
+\index{pennos\_error@{pennos\_error}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{pennos\_error}{pennos\_error}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\+\_\+error}}}
+
+
+
+Enumeration of error types in Penn\+OS. 
+
+This enumeration lists various error types that can occur in Penn\+OS, providing a convenient way to handle different error scenarios.
+
+
+\begin{DoxyItemize}
+\item {\ttfamily File\+Not\+Found\+Error}\+: File not found error.
+\item {\ttfamily Permission\+Error}\+: Permission error.
+\item {\ttfamily Command\+Not\+Found\+Error}\+: Command not found error.
+\item {\ttfamily Process\+Not\+Found\+Error}\+: Process not found error.
+\item {\ttfamily Process\+Spawn\+Error}\+: Process spawn error.
+\item {\ttfamily Argument\+Not\+Found\+Error}\+: Argument not found error.
+\item {\ttfamily Signal\+Not\+Found\+Error}\+: Signal not found error.
+\item {\ttfamily Process\+Wait\+Error}\+: Process wait error.
+\item {\ttfamily Status\+Not\+Found\+Error}\+: Status not found error.
+\item {\ttfamily PCBNot\+Found\+Error}\+: Process Control Block (PCB) not found error.
+\item {\ttfamily Process\+Status\+Error}\+: Process status error.
+\item {\ttfamily Too\+Many\+Files\+Open\+Error}\+: Too many files open error.
+\item {\ttfamily No\+More\+Space\+Error}\+: No more space error.
+\item {\ttfamily Invalid\+File\+Descriptor\+Error}\+: Invalid file descriptor error.
+\item {\ttfamily File\+Write\+Error}\+: File write error.
+\item {\ttfamily Deque\+Space\+Error}\+: Deque space error.
+\item {\ttfamily Prompt\+Error}\+: Prompt error.
+\item {\ttfamily File\+Read\+Error}\+: File read error.
+\item {\ttfamily File\+Is\+Open\+Error}\+: File is open error.
+\item {\ttfamily Number\+Of\+Errors}\+: Keep track of errors (do not add errors below this point). 
+\end{DoxyItemize}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{errors_8h_a426fc668869cc80eca1c9fd1d8f1d8a6}\label{errors_8h_a426fc668869cc80eca1c9fd1d8f1d8a6} 
+\index{errors.h@{errors.h}!mapEnumToString@{mapEnumToString}}
+\index{mapEnumToString@{mapEnumToString}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{mapEnumToString()}{mapEnumToString()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} map\+Enum\+To\+String (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\+\_\+error}}}]{error }\end{DoxyParamCaption})}
+
+
+
+Maps a Penn\+OS error enumeration to its corresponding string representation. 
+
+This function takes a Penn\+OS error enumeration and returns a pointer to the corresponding human-\/readable string representation of the error.
+
+
+\begin{DoxyParams}{Parameters}
+{\em error} & The Penn\+OS error enumeration to be mapped. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+const char\texorpdfstring{$\ast$}{*} A pointer to the string representation of the specified error. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{errors_8h_a128258e4dbbd9ca19559087b553a9bef}\label{errors_8h_a128258e4dbbd9ca19559087b553a9bef} 
+\index{errors.h@{errors.h}!pennos\_errors@{pennos\_errors}}
+\index{pennos\_errors@{pennos\_errors}!errors.h@{errors.h}}
+\doxysubsubsection{\texorpdfstring{pennos\_errors}{pennos\_errors}}
+{\footnotesize\ttfamily const char\texorpdfstring{$\ast$}{*} pennos\+\_\+errors\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+External declaration of the array of Penn\+OS error messages. 
+
+This external constant array, {\ttfamily pennos\+\_\+errors}, provides human-\/readable error messages corresponding to each error type in the Penn\+OS system. It is expected to be defined elsewhere in the codebase. 

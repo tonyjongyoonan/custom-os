@@ -1,0 +1,48 @@
+\doxysection{pid\+\_\+dq\+\_\+st Struct Reference}
+\hypertarget{structpid__dq__st}{}\label{structpid__dq__st}\index{pid\_dq\_st@{pid\_dq\_st}}
+
+
+Structure representing a deque with PID.  
+
+
+
+
+{\ttfamily \#include $<$Deque\+\_\+\+PID.\+h$>$}
+
+
+
+Collaboration diagram for pid\+\_\+dq\+\_\+st\+:
+% FIG 0
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structpid__dq__st_a7c6e205ff2149119d354c06b9ecf07cd}\label{structpid__dq__st_a7c6e205ff2149119d354c06b9ecf07cd} 
+int {\bfseries num\+\_\+elements}
+\begin{DoxyCompactList}\small\item\em The number of elements in the deque. \end{DoxyCompactList}\item 
+\Hypertarget{structpid__dq__st_ae6a0a1d70fd6a9a0b5af7915790f70cb}\label{structpid__dq__st_ae6a0a1d70fd6a9a0b5af7915790f70cb} 
+\mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}} \texorpdfstring{$\ast$}{*} {\bfseries front}
+\begin{DoxyCompactList}\small\item\em Pointer to the beginning of the deque, or NULL if the deque is empty. \end{DoxyCompactList}\item 
+\Hypertarget{structpid__dq__st_a02a09b13d483cdea080b8e8b87d0684c}\label{structpid__dq__st_a02a09b13d483cdea080b8e8b87d0684c} 
+\mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}} \texorpdfstring{$\ast$}{*} {\bfseries back}
+\begin{DoxyCompactList}\small\item\em Pointer to the end of the deque, or NULL if the deque is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a deque with PID. 
+
+This structure contains metadata about the deque with Process ID (PID), including the number of elements, a pointer to the beginning of the deque ({\ttfamily front}), and a pointer to the end of the deque ({\ttfamily back}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+elements} & The number of elements in the deque. \\
+\hline
+{\em front} & Pointer to the beginning of the deque, or NULL if the deque is empty. \\
+\hline
+{\em back} & Pointer to the end of the deque, or NULL if the deque is empty. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Deque__PID_8h}{Deque\+\_\+\+PID.\+h}}\end{DoxyCompactItemize}

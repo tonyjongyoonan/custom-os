@@ -1,0 +1,21 @@
+digraph "src/signals.h"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  Node1 [id="Node000001",label="src/signals.h",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Header file for PennOS signals."];
+  Node1 -> Node2 [id="edge8_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="src/bash.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$bash_8h.html",tooltip="Header file defining simple shell function for PennOS."];
+  Node1 -> Node3 [id="edge9_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="src/k_pennos.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$k__pennos_8h.html",tooltip="Header file defining the kernel-level functions of PennOS."];
+  Node1 -> Node4 [id="edge10_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="src/p_pennos.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$p__pennos_8h.html",tooltip="Header file for PennOS, the Penn Shell Operating System."];
+  Node4 -> Node5 [id="edge11_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="src/pennfat.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$pennfat_8h.html",tooltip="Header file for PennFAT filesystem and related commands."];
+  Node5 -> Node6 [id="edge12_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="src/f_pennos.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$f__pennos_8h.html",tooltip="Header file for our f functions."];
+  Node6 -> Node2 [id="edge13_Node000006_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node7 [id="edge14_Node000001_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="src/scheduler.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$scheduler_8h.html",tooltip="Header file defining the kernel-level scheduler functions and scheduler-related helper functions for ..."];
+}

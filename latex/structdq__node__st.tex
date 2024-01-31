@@ -1,0 +1,48 @@
+\doxysection{dq\+\_\+node\+\_\+st Struct Reference}
+\hypertarget{structdq__node__st}{}\label{structdq__node__st}\index{dq\_node\_st@{dq\_node\_st}}
+
+
+Structure representing a node in a doubly-\/linked deque.  
+
+
+
+
+{\ttfamily \#include $<$Deque.\+h$>$}
+
+
+
+Collaboration diagram for dq\+\_\+node\+\_\+st\+:
+% FIG 0
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structdq__node__st_a9581e4cb422d3e16d619b812b6feee7d}\label{structdq__node__st_a9581e4cb422d3e16d619b812b6feee7d} 
+\mbox{\hyperlink{structpcb__struct}{PCB}} \texorpdfstring{$\ast$}{*} {\bfseries pcb}
+\begin{DoxyCompactList}\small\item\em Pointer to the Process Control Block (PCB) representing the current job. \end{DoxyCompactList}\item 
+\Hypertarget{structdq__node__st_a347e163faa715801facdbe8307a0e2b9}\label{structdq__node__st_a347e163faa715801facdbe8307a0e2b9} 
+struct \mbox{\hyperlink{structdq__node__st}{dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} {\bfseries next}
+\begin{DoxyCompactList}\small\item\em Pointer to the next node in the deque, or NULL if this is the last node. \end{DoxyCompactList}\item 
+\Hypertarget{structdq__node__st_a3ba3f240ad16aaa43696136700a0803c}\label{structdq__node__st_a3ba3f240ad16aaa43696136700a0803c} 
+struct \mbox{\hyperlink{structdq__node__st}{dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} {\bfseries prev}
+\begin{DoxyCompactList}\small\item\em Pointer to the previous node in the deque, or NULL if this is the first node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a node in a doubly-\/linked deque. 
+
+This structure defines a node in a doubly-\/linked deque, containing a pointer to a Process Control Block (PCB) representing the current job, and pointers to the next and previous nodes in the deque.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & Pointer to the Process Control Block (PCB) representing the current job. \\
+\hline
+{\em next} & Pointer to the next node in the deque, or NULL if this is the last node. \\
+\hline
+{\em prev} & Pointer to the previous node in the deque, or NULL if this is the first node. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Deque_8h}{Deque.\+h}}\end{DoxyCompactItemize}

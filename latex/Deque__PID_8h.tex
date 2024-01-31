@@ -1,0 +1,325 @@
+\doxysection{src/\+Deque\+\_\+\+PID.h File Reference}
+\hypertarget{Deque__PID_8h}{}\label{Deque__PID_8h}\index{src/Deque\_PID.h@{src/Deque\_PID.h}}
+
+
+Header file for a deque with PID.  
+
+
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+Include dependency graph for Deque\+\_\+\+PID.\+h\+:
+% FIG 0
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpid__dq__node__st}{pid\+\_\+dq\+\_\+node\+\_\+st}}
+\begin{DoxyCompactList}\small\item\em Structure representing a node in a deque with PID. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structpid__dq__st}{pid\+\_\+dq\+\_\+st}}
+\begin{DoxyCompactList}\small\item\em Structure representing a deque with PID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structpid__dq__node__st}{pid\+\_\+dq\+\_\+node\+\_\+st}} \mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}}
+\begin{DoxyCompactList}\small\item\em Structure representing a node in a deque with PID. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structpid__dq__st}{pid\+\_\+dq\+\_\+st}} \mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}}
+\begin{DoxyCompactList}\small\item\em Structure representing a deque with PID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{Deque__PID_8h_a535a4654175076a8a23416300ea5cd7a}{pid\+\_\+\+Deque\+\_\+\+Allocate}} (void)
+\begin{DoxyCompactList}\small\item\em Allocates space for a deque with PID and initializes its variables. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque__PID_8h_a02aa7aaa07e109d93038014beab4782e}{pid\+\_\+\+Deque\+\_\+\+Free}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq)
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for a deque with PID. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{Deque__PID_8h_a5271f75b60ba4b346c3d3a0f2f74811b}{pid\+\_\+\+Deque\+\_\+\+Size}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq)
+\begin{DoxyCompactList}\small\item\em Returns the number of elements in the deque with PID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque__PID_8h_aa2030815a480f284a34f9c58c8af7f3a}{pid\+\_\+\+Deque\+\_\+\+Push\+\_\+\+Front}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t payload)
+\begin{DoxyCompactList}\small\item\em Adds a new element to the front of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_a64a18f7de271c11f7177066f5e5780b3}{pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Front}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Pops an element from the front of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_a5618426c0b7ae23b18044c9c1263b5fc}{pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+PID}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t pid\+\_\+to\+\_\+pop)
+\begin{DoxyCompactList}\small\item\em Pops an element with a specific PID from the front of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_af70f327e090dbbf8988e7af562d48274}{pid\+\_\+\+Deque\+\_\+\+Peek\+\_\+\+Front}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Peeks at the element at the front of the deque with PID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{Deque__PID_8h_a0c616846c33ab8015c6c07c34346eee2}{pid\+\_\+\+Deque\+\_\+\+Push\+\_\+\+Back}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t payload)
+\begin{DoxyCompactList}\small\item\em Pushes a new element to the end of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_ab94a4aab9ccfc630049397379cb9889c}{pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Back}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Pops an element from the end of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_af092ca8fd05f4c2f616db3dc0b39fc35}{pid\+\_\+\+Deque\+\_\+\+Peek\+\_\+\+Back}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, pid\+\_\+t \texorpdfstring{$\ast$}{*}payload\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Peeks at the element at the back of the deque with PID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{Deque__PID_8h_a75bcd57a4f6d27edd5daa5f2c117422b}{pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Node}} (\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}dq, \mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Pops a specified PID node from the deque with PID. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for a deque with PID. 
+
+This file defines structures and functions for a deque with Process ID (PID). 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}\label{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque@{pid\_Deque}}
+\index{pid\_Deque@{pid\_Deque}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque}{pid\_Deque}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpid__dq__st}{pid\+\_\+dq\+\_\+st}} \mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}}}
+
+
+
+Structure representing a deque with PID. 
+
+This structure contains metadata about the deque with Process ID (PID), including the number of elements, a pointer to the beginning of the deque ({\ttfamily front}), and a pointer to the end of the deque ({\ttfamily back}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+elements} & The number of elements in the deque. \\
+\hline
+{\em front} & Pointer to the beginning of the deque, or NULL if the deque is empty. \\
+\hline
+{\em back} & Pointer to the end of the deque, or NULL if the deque is empty. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}\label{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_DequeNode@{pid\_DequeNode}}
+\index{pid\_DequeNode@{pid\_DequeNode}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_DequeNode}{pid\_DequeNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structpid__dq__node__st}{pid\+\_\+dq\+\_\+node\+\_\+st}} \mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}}}
+
+
+
+Structure representing a node in a deque with PID. 
+
+This structure defines a node in a deque with Process ID (PID), containing a PID, and pointers to the next and previous nodes in the deque.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The Process ID (PID) of the current job. \\
+\hline
+{\em next} & Pointer to the next node in the deque, or NULL if this is the last node. \\
+\hline
+{\em prev} & Pointer to the previous node in the deque, or NULL if this is the first node. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{Deque__PID_8h_a535a4654175076a8a23416300ea5cd7a}\label{Deque__PID_8h_a535a4654175076a8a23416300ea5cd7a} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Allocate@{pid\_Deque\_Allocate}}
+\index{pid\_Deque\_Allocate@{pid\_Deque\_Allocate}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Allocate()}{pid\_Deque\_Allocate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*} pid\+\_\+\+Deque\+\_\+\+Allocate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Allocates space for a deque with PID and initializes its variables. 
+
+This function dynamically allocates memory for a deque with Process ID (PID) structure, including variables like {\ttfamily num\+\_\+elements}, {\ttfamily front}, and {\ttfamily back}. The allocated deque is initialized with default values.
+
+\begin{DoxyReturn}{Returns}
+pid\+\_\+\+Deque\texorpdfstring{$\ast$}{*} Pointer to the allocated deque with PID structure. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_a02aa7aaa07e109d93038014beab4782e}\label{Deque__PID_8h_a02aa7aaa07e109d93038014beab4782e} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Free@{pid\_Deque\_Free}}
+\index{pid\_Deque\_Free@{pid\_Deque\_Free}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Free()}{pid\_Deque\_Free()}}
+{\footnotesize\ttfamily void pid\+\_\+\+Deque\+\_\+\+Free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq }\end{DoxyParamCaption})}
+
+
+
+Frees the memory allocated for a deque with PID. 
+
+This function frees the memory previously allocated for a deque with Process ID (PID) structure by {\ttfamily pid\+\_\+\+Deque\+\_\+\+Allocate}. After calling this function, it is unsafe to use the deque referenced by the {\ttfamily dq} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to be freed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Deque__PID_8h_af092ca8fd05f4c2f616db3dc0b39fc35}\label{Deque__PID_8h_af092ca8fd05f4c2f616db3dc0b39fc35} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Peek\_Back@{pid\_Deque\_Peek\_Back}}
+\index{pid\_Deque\_Peek\_Back@{pid\_Deque\_Peek\_Back}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Peek\_Back()}{pid\_Deque\_Peek\_Back()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Peek\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Peeks at the element at the back of the deque with PID. 
+
+This function retrieves the element at the back of the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter. On success, the peeked node\textquotesingle{}s PID is returned through the {\ttfamily payload\+\_\+ptr} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to peek. \\
+\hline
+{\em payload\+\_\+ptr} & A return parameter; on success, the peeked node\textquotesingle{}s PID is returned through this parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the deque is empty), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_af70f327e090dbbf8988e7af562d48274}\label{Deque__PID_8h_af70f327e090dbbf8988e7af562d48274} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Peek\_Front@{pid\_Deque\_Peek\_Front}}
+\index{pid\_Deque\_Peek\_Front@{pid\_Deque\_Peek\_Front}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Peek\_Front()}{pid\_Deque\_Peek\_Front()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Peek\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Peeks at the element at the front of the deque with PID. 
+
+This function retrieves the element at the front of the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter. On success, the peeked node\textquotesingle{}s PID is returned through the {\ttfamily payload\+\_\+ptr} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to peek. \\
+\hline
+{\em payload\+\_\+ptr} & A return parameter; on success, the peeked node\textquotesingle{}s PID is returned through this parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the deque is empty), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_ab94a4aab9ccfc630049397379cb9889c}\label{Deque__PID_8h_ab94a4aab9ccfc630049397379cb9889c} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Pop\_Back@{pid\_Deque\_Pop\_Back}}
+\index{pid\_Deque\_Pop\_Back@{pid\_Deque\_Pop\_Back}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Pop\_Back()}{pid\_Deque\_Pop\_Back()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Pops an element from the end of the deque with PID. 
+
+This function pops an element from the end of the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter. On success, the popped node\textquotesingle{}s PID is returned through the {\ttfamily payload\+\_\+ptr} parameter. This is the "{}end"{} version of {\ttfamily pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Front}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to remove from. \\
+\hline
+{\em payload\+\_\+ptr} & A return parameter; on success, the popped node\textquotesingle{}s PID is returned through this parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the deque is empty), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_a64a18f7de271c11f7177066f5e5780b3}\label{Deque__PID_8h_a64a18f7de271c11f7177066f5e5780b3} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Pop\_Front@{pid\_Deque\_Pop\_Front}}
+\index{pid\_Deque\_Pop\_Front@{pid\_Deque\_Pop\_Front}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Pop\_Front()}{pid\_Deque\_Pop\_Front()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t \texorpdfstring{$\ast$}{*}}]{payload\+\_\+ptr }\end{DoxyParamCaption})}
+
+
+
+Pops an element from the front of the deque with PID. 
+
+This function pops an element from the front of the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter. On success, the popped node\textquotesingle{}s PID is returned through the {\ttfamily payload\+\_\+ptr} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to pop from. \\
+\hline
+{\em payload\+\_\+ptr} & A return parameter; on success, the popped node\textquotesingle{}s PID is returned through this parameter. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the deque is empty), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_a75bcd57a4f6d27edd5daa5f2c117422b}\label{Deque__PID_8h_a75bcd57a4f6d27edd5daa5f2c117422b} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Pop\_Node@{pid\_Deque\_Pop\_Node}}
+\index{pid\_Deque\_Pop\_Node@{pid\_Deque\_Pop\_Node}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Pop\_Node()}{pid\_Deque\_Pop\_Node()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{\mbox{\hyperlink{Deque__PID_8h_a5abb7a99da8c31a01b32f6e54368340f}{pid\+\_\+\+Deque\+Node}} \texorpdfstring{$\ast$}{*}}]{node }\end{DoxyParamCaption})}
+
+
+
+Pops a specified PID node from the deque with PID. 
+
+This function pops the specified PID node from the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to pop from. \\
+\hline
+{\em node} & Pointer to the PID node to pop. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the specified PID node is not found), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_a5618426c0b7ae23b18044c9c1263b5fc}\label{Deque__PID_8h_a5618426c0b7ae23b18044c9c1263b5fc} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Pop\_PID@{pid\_Deque\_Pop\_PID}}
+\index{pid\_Deque\_Pop\_PID@{pid\_Deque\_Pop\_PID}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Pop\_PID()}{pid\_Deque\_Pop\_PID()}}
+{\footnotesize\ttfamily bool pid\+\_\+\+Deque\+\_\+\+Pop\+\_\+\+PID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t}]{pid\+\_\+to\+\_\+pop }\end{DoxyParamCaption})}
+
+
+
+Pops an element with a specific PID from the front of the deque with PID. 
+
+This function pops an element with the specified PID from the front of the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to pop from. \\
+\hline
+{\em pid\+\_\+to\+\_\+pop} & The PID of the element to pop. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool Returns false on failure (e.\+g., the deque is empty or the specified PID is not found), and true on success. 
+\end{DoxyReturn}
+\Hypertarget{Deque__PID_8h_a0c616846c33ab8015c6c07c34346eee2}\label{Deque__PID_8h_a0c616846c33ab8015c6c07c34346eee2} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Push\_Back@{pid\_Deque\_Push\_Back}}
+\index{pid\_Deque\_Push\_Back@{pid\_Deque\_Push\_Back}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Push\_Back()}{pid\_Deque\_Push\_Back()}}
+{\footnotesize\ttfamily void pid\+\_\+\+Deque\+\_\+\+Push\+\_\+\+Back (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t}]{payload }\end{DoxyParamCaption})}
+
+
+
+Pushes a new element to the end of the deque with PID. 
+
+This function pushes a new element with the specified PID payload to the end of the deque referenced by the {\ttfamily dq} parameter. This is the "{}end"{} version of {\ttfamily pid\+\_\+\+Deque\+\_\+\+Push\+\_\+\+Front}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to push onto. \\
+\hline
+{\em payload} & The PID payload to push to the end. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Deque__PID_8h_aa2030815a480f284a34f9c58c8af7f3a}\label{Deque__PID_8h_aa2030815a480f284a34f9c58c8af7f3a} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Push\_Front@{pid\_Deque\_Push\_Front}}
+\index{pid\_Deque\_Push\_Front@{pid\_Deque\_Push\_Front}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Push\_Front()}{pid\_Deque\_Push\_Front()}}
+{\footnotesize\ttfamily void pid\+\_\+\+Deque\+\_\+\+Push\+\_\+\+Front (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq,  }\item[{pid\+\_\+t}]{payload }\end{DoxyParamCaption})}
+
+
+
+Adds a new element to the front of the deque with PID. 
+
+This function pushes a new element with the specified PID payload to the front of the deque referenced by the {\ttfamily dq} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to push onto. \\
+\hline
+{\em payload} & The PID payload to push to the front. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{Deque__PID_8h_a5271f75b60ba4b346c3d3a0f2f74811b}\label{Deque__PID_8h_a5271f75b60ba4b346c3d3a0f2f74811b} 
+\index{Deque\_PID.h@{Deque\_PID.h}!pid\_Deque\_Size@{pid\_Deque\_Size}}
+\index{pid\_Deque\_Size@{pid\_Deque\_Size}!Deque\_PID.h@{Deque\_PID.h}}
+\doxysubsubsection{\texorpdfstring{pid\_Deque\_Size()}{pid\_Deque\_Size()}}
+{\footnotesize\ttfamily int pid\+\_\+\+Deque\+\_\+\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{Deque__PID_8h_a75558976cbcab1348521cd5545ea2468}{pid\+\_\+\+Deque}} \texorpdfstring{$\ast$}{*}}]{dq }\end{DoxyParamCaption})}
+
+
+
+Returns the number of elements in the deque with PID. 
+
+This function returns the number of elements in the deque with Process ID (PID) referenced by the {\ttfamily dq} parameter.
+
+
+\begin{DoxyParams}{Parameters}
+{\em dq} & Pointer to the deque with PID structure to query. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int The size of the deque. 
+\end{DoxyReturn}

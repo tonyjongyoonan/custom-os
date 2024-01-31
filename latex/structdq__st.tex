@@ -1,0 +1,48 @@
+\doxysection{dq\+\_\+st Struct Reference}
+\hypertarget{structdq__st}{}\label{structdq__st}\index{dq\_st@{dq\_st}}
+
+
+Structure representing a deque.  
+
+
+
+
+{\ttfamily \#include $<$Deque.\+h$>$}
+
+
+
+Collaboration diagram for dq\+\_\+st\+:
+% FIG 0
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structdq__st_a795db31628f18237dea68d158daa88ca}\label{structdq__st_a795db31628f18237dea68d158daa88ca} 
+int {\bfseries num\+\_\+elements}
+\begin{DoxyCompactList}\small\item\em The number of elements in the deque. \end{DoxyCompactList}\item 
+\Hypertarget{structdq__st_a619d802be0bb6835672070ea30341e5e}\label{structdq__st_a619d802be0bb6835672070ea30341e5e} 
+\mbox{\hyperlink{Deque_8h_a26579b27a5163d1424fa4adde69119c6}{Deque\+Node}} \texorpdfstring{$\ast$}{*} {\bfseries front}
+\begin{DoxyCompactList}\small\item\em Pointer to the beginning of the deque, or NULL if the deque is empty. \end{DoxyCompactList}\item 
+\Hypertarget{structdq__st_a5cb2fd213bcce38aa41cd27b9aa2b611}\label{structdq__st_a5cb2fd213bcce38aa41cd27b9aa2b611} 
+\mbox{\hyperlink{Deque_8h_a26579b27a5163d1424fa4adde69119c6}{Deque\+Node}} \texorpdfstring{$\ast$}{*} {\bfseries back}
+\begin{DoxyCompactList}\small\item\em Pointer to the end of the deque, or NULL if the deque is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a deque. 
+
+This structure contains metadata about the deque, including the number of elements, a pointer to the beginning of the deque ({\ttfamily front}), and a pointer to the end of the deque ({\ttfamily back}).
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+elements} & The number of elements in the deque. \\
+\hline
+{\em front} & Pointer to the beginning of the deque, or NULL if the deque is empty. \\
+\hline
+{\em back} & Pointer to the end of the deque, or NULL if the deque is empty. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Deque_8h}{Deque.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,55 @@
+\doxysection{src/stress.h File Reference}
+\hypertarget{stress_8h}{}\label{stress_8h}\index{src/stress.h@{src/stress.h}}
+
+
+Header file for stress testing.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}{hang}} (void)
+\begin{DoxyCompactList}\small\item\em Causes the calling thread to enter an infinite loop, effectively hanging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}{nohang}} (void)
+\begin{DoxyCompactList}\small\item\em Runs a non-\/blocking operation, allowing the calling thread to proceed without hanging. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{stress_8h_aed672bfe234aaab49f6bdbd655714f02}{recur}} (void)
+\begin{DoxyCompactList}\small\item\em Recursively spawns itself 26 times, naming the spawned processes Gen\+\_\+A through Gen\+\_\+Z. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for stress testing. 
+
+This file contains declarations and definitions related to stress testing in the system. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{stress_8h_a1b2a4626595c910b3d3ce25ad4934960}\label{stress_8h_a1b2a4626595c910b3d3ce25ad4934960} 
+\index{stress.h@{stress.h}!hang@{hang}}
+\index{hang@{hang}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{hang()}{hang()}}
+{\footnotesize\ttfamily void hang (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Causes the calling thread to enter an infinite loop, effectively hanging. 
+
+This function is designed to make the calling thread enter an infinite loop, causing it to hang indefinitely. It serves as a simple way to stress test a thread that does not exit on its own and needs to be terminated externally. \Hypertarget{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5}\label{stress_8h_abaaeefe806d9f0dced0ea5a1f6f21fe5} 
+\index{stress.h@{stress.h}!nohang@{nohang}}
+\index{nohang@{nohang}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{nohang()}{nohang()}}
+{\footnotesize\ttfamily void nohang (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Runs a non-\/blocking operation, allowing the calling thread to proceed without hanging. 
+
+This function is designed to perform a non-\/blocking operation, allowing the calling thread to proceed without entering a hanging state. It is useful when you want to stress test an operation without blocking the execution flow of the calling thread. \Hypertarget{stress_8h_aed672bfe234aaab49f6bdbd655714f02}\label{stress_8h_aed672bfe234aaab49f6bdbd655714f02} 
+\index{stress.h@{stress.h}!recur@{recur}}
+\index{recur@{recur}!stress.h@{stress.h}}
+\doxysubsubsection{\texorpdfstring{recur()}{recur()}}
+{\footnotesize\ttfamily void recur (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Recursively spawns itself 26 times, naming the spawned processes Gen\+\_\+A through Gen\+\_\+Z. 
+
+The {\ttfamily recur} function recursively spawns itself 26 times, generating processes named Gen\+\_\+A through Gen\+\_\+Z. Each spawned process is block-\/waited by its parent. 

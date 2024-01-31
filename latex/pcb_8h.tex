@@ -1,0 +1,115 @@
+\doxysection{src/pcb.h File Reference}
+\hypertarget{pcb_8h}{}\label{pcb_8h}\index{src/pcb.h@{src/pcb.h}}
+
+
+Header file defining the Process Control Block (PCB) structure and related functions.  
+
+
+{\ttfamily \#include $<$ucontext.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+Include dependency graph for pcb.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structpcb__struct}{pcb\+\_\+struct}}
+\begin{DoxyCompactList}\small\item\em Process Control Block (PCB) structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pcb_8h_a78c99ffd76a7bb3c8c74db76207e9ab4}\label{pcb_8h_a78c99ffd76a7bb3c8c74db76207e9ab4} 
+\#define {\bfseries \+\_\+\+XOPEN\+\_\+\+SOURCE}~500
+\item 
+\Hypertarget{pcb_8h_ae4777ede3ed2173c78fab7798ad6eddb}\label{pcb_8h_ae4777ede3ed2173c78fab7798ad6eddb} 
+\#define {\bfseries MAX\+\_\+\+OPEN\+\_\+\+FILES}~1024
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pcb_8h_a25c804b64cd4b59e7a86076bd6605dd2}\label{pcb_8h_a25c804b64cd4b59e7a86076bd6605dd2} 
+typedef struct \mbox{\hyperlink{structpcb__struct}{pcb\+\_\+struct}} {\bfseries PCB}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{pcb_8h_a85ec14146044508e4f84e2574bd3d73c}\label{pcb_8h_a85ec14146044508e4f84e2574bd3d73c} 
+enum \mbox{\hyperlink{pcb_8h_a85ec14146044508e4f84e2574bd3d73c}{process\+\_\+status}} \{ \newline
+{\bfseries READY}
+, {\bfseries BLOCKED}
+, {\bfseries STOPPED}
+, {\bfseries RUNNING}
+, \newline
+{\bfseries ZOMBIE}
+, {\bfseries TERMINATED}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of process statuses. \end{DoxyCompactList}\item 
+\Hypertarget{pcb_8h_afd6c5c66410e897c6efbfccf16ae50bb}\label{pcb_8h_afd6c5c66410e897c6efbfccf16ae50bb} 
+enum \mbox{\hyperlink{pcb_8h_afd6c5c66410e897c6efbfccf16ae50bb}{exit\+\_\+status}} \{ \newline
+{\bfseries NOT\+\_\+\+EXITED}
+, {\bfseries EXIT\+\_\+\+NORMAL}
+, {\bfseries EXIT\+\_\+\+STOPPED}
+, {\bfseries EXIT\+\_\+\+SIGNAL}
+, \newline
+{\bfseries NO\+\_\+\+CHANGE}
+ \}
+\begin{DoxyCompactList}\small\item\em Enumeration of exit statuses. Used for the implementation of waitpid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structpcb__struct}{PCB}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{pcb_8h_a04cc1d456d92d5ec9a90b095ca996804}{init\+\_\+pcb}} (pid\+\_\+t pid, pid\+\_\+t parent, int \texorpdfstring{$\ast$}{*}open\+\_\+fds, int num\+\_\+open\+\_\+fds, int priority)
+\begin{DoxyCompactList}\small\item\em Initialize a Process Control Block (PCB). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{pcb_8h_afcf9c03cadad71f18cbfd0761ca732fc}{free\+\_\+pcb}} (\mbox{\hyperlink{structpcb__struct}{PCB}} \texorpdfstring{$\ast$}{*}pcb)
+\begin{DoxyCompactList}\small\item\em Free a Process Control Block (PCB). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file defining the Process Control Block (PCB) structure and related functions. 
+
+This file defines the Process Control Block (PCB) structure and functions to initialize and free PCBs. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pcb_8h_afcf9c03cadad71f18cbfd0761ca732fc}\label{pcb_8h_afcf9c03cadad71f18cbfd0761ca732fc} 
+\index{pcb.h@{pcb.h}!free\_pcb@{free\_pcb}}
+\index{free\_pcb@{free\_pcb}!pcb.h@{pcb.h}}
+\doxysubsubsection{\texorpdfstring{free\_pcb()}{free\_pcb()}}
+{\footnotesize\ttfamily void free\+\_\+pcb (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structpcb__struct}{PCB}} \texorpdfstring{$\ast$}{*}}]{pcb }\end{DoxyParamCaption})}
+
+
+
+Free a Process Control Block (PCB). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pcb} & PCB to be freed. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{pcb_8h_a04cc1d456d92d5ec9a90b095ca996804}\label{pcb_8h_a04cc1d456d92d5ec9a90b095ca996804} 
+\index{pcb.h@{pcb.h}!init\_pcb@{init\_pcb}}
+\index{init\_pcb@{init\_pcb}!pcb.h@{pcb.h}}
+\doxysubsubsection{\texorpdfstring{init\_pcb()}{init\_pcb()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structpcb__struct}{PCB}} \texorpdfstring{$\ast$}{*} init\+\_\+pcb (\begin{DoxyParamCaption}\item[{pid\+\_\+t}]{pid,  }\item[{pid\+\_\+t}]{parent,  }\item[{int \texorpdfstring{$\ast$}{*}}]{open\+\_\+fds,  }\item[{int}]{num\+\_\+open\+\_\+fds,  }\item[{int}]{priority }\end{DoxyParamCaption})}
+
+
+
+Initialize a Process Control Block (PCB). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & Process id. \\
+\hline
+{\em parent} & Parent process id. \\
+\hline
+{\em open\+\_\+fds} & Array of open file descriptors. \\
+\hline
+{\em num\+\_\+open\+\_\+fds} & Number of open file descriptors. \\
+\hline
+{\em priority} & Priority level. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Initialized PCB. 
+\end{DoxyReturn}

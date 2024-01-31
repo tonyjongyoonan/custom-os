@@ -1,0 +1,57 @@
+\doxysection{File\+Descriptor Struct Reference}
+\hypertarget{structFileDescriptor}{}\label{structFileDescriptor}\index{FileDescriptor@{FileDescriptor}}
+
+
+Collaboration diagram for File\+Descriptor\+:
+% FIG 0
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} \mbox{\hyperlink{structFileDescriptor_acb68cf9dbca60f8cfb18c9fef8c99339}{dir\+\_\+entry}}
+\item 
+int \mbox{\hyperlink{structFileDescriptor_af86a3bd4e71b0f0446e38fc1ab9c5d83}{offset}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structFileDescriptor_a65764a8814b5fd3d674d10e74ebddd4b}{mode}}
+\item 
+\mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433}{fd\+\_\+type}} \mbox{\hyperlink{structFileDescriptor_a126ee8d1f1042f454f15c8e33e2017f8}{fd\+\_\+type}}
+\item 
+int \mbox{\hyperlink{structFileDescriptor_a1ff3368fb557605985ebf561184e53aa}{ref\+\_\+count}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{structFileDescriptor_acb68cf9dbca60f8cfb18c9fef8c99339}\label{structFileDescriptor_acb68cf9dbca60f8cfb18c9fef8c99339} 
+\index{FileDescriptor@{FileDescriptor}!dir\_entry@{dir\_entry}}
+\index{dir\_entry@{dir\_entry}!FileDescriptor@{FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{dir\_entry}{dir\_entry}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} File\+Descriptor\+::dir\+\_\+entry}
+
+Directory entry associated with the file. \Hypertarget{structFileDescriptor_a126ee8d1f1042f454f15c8e33e2017f8}\label{structFileDescriptor_a126ee8d1f1042f454f15c8e33e2017f8} 
+\index{FileDescriptor@{FileDescriptor}!fd\_type@{fd\_type}}
+\index{fd\_type@{fd\_type}!FileDescriptor@{FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{fd\_type}{fd\_type}}
+{\footnotesize\ttfamily \mbox{\hyperlink{f__pennos_8h_a713819d767e1ce5a30bd566e64a47433}{fd\+\_\+type}} File\+Descriptor\+::fd\+\_\+type}
+
+Type of file descriptor. \Hypertarget{structFileDescriptor_a65764a8814b5fd3d674d10e74ebddd4b}\label{structFileDescriptor_a65764a8814b5fd3d674d10e74ebddd4b} 
+\index{FileDescriptor@{FileDescriptor}!mode@{mode}}
+\index{mode@{mode}!FileDescriptor@{FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily uint8\+\_\+t File\+Descriptor\+::mode}
+
+File access mode (1 for read, 2 for write, 3 for append). \Hypertarget{structFileDescriptor_af86a3bd4e71b0f0446e38fc1ab9c5d83}\label{structFileDescriptor_af86a3bd4e71b0f0446e38fc1ab9c5d83} 
+\index{FileDescriptor@{FileDescriptor}!offset@{offset}}
+\index{offset@{offset}!FileDescriptor@{FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{offset}{offset}}
+{\footnotesize\ttfamily int File\+Descriptor\+::offset}
+
+Current offset in the file. \Hypertarget{structFileDescriptor_a1ff3368fb557605985ebf561184e53aa}\label{structFileDescriptor_a1ff3368fb557605985ebf561184e53aa} 
+\index{FileDescriptor@{FileDescriptor}!ref\_count@{ref\_count}}
+\index{ref\_count@{ref\_count}!FileDescriptor@{FileDescriptor}}
+\doxysubsubsection{\texorpdfstring{ref\_count}{ref\_count}}
+{\footnotesize\ttfamily int File\+Descriptor\+::ref\+\_\+count}
+
+Reference count for the file descriptor. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{f__pennos_8h}{f\+\_\+pennos.\+h}}\end{DoxyCompactItemize}

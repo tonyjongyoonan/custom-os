@@ -1,0 +1,48 @@
+\doxysection{pid\+\_\+dq\+\_\+node\+\_\+st Struct Reference}
+\hypertarget{structpid__dq__node__st}{}\label{structpid__dq__node__st}\index{pid\_dq\_node\_st@{pid\_dq\_node\_st}}
+
+
+Structure representing a node in a deque with PID.  
+
+
+
+
+{\ttfamily \#include $<$Deque\+\_\+\+PID.\+h$>$}
+
+
+
+Collaboration diagram for pid\+\_\+dq\+\_\+node\+\_\+st\+:
+% FIG 0
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structpid__dq__node__st_a9719454146e41a595b8b676532b0d419}\label{structpid__dq__node__st_a9719454146e41a595b8b676532b0d419} 
+pid\+\_\+t {\bfseries pid}
+\begin{DoxyCompactList}\small\item\em The Process ID (PID) of the current job. \end{DoxyCompactList}\item 
+\Hypertarget{structpid__dq__node__st_aa7e25e2c03507ba8e4c7400d97c94f11}\label{structpid__dq__node__st_aa7e25e2c03507ba8e4c7400d97c94f11} 
+struct \mbox{\hyperlink{structpid__dq__node__st}{pid\+\_\+dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} {\bfseries next}
+\begin{DoxyCompactList}\small\item\em Pointer to the next node in the deque, or NULL if this is the last node. \end{DoxyCompactList}\item 
+\Hypertarget{structpid__dq__node__st_a9ca37a45d0aa885953ab91e7c751ccf2}\label{structpid__dq__node__st_a9ca37a45d0aa885953ab91e7c751ccf2} 
+struct \mbox{\hyperlink{structpid__dq__node__st}{pid\+\_\+dq\+\_\+node\+\_\+st}} \texorpdfstring{$\ast$}{*} {\bfseries prev}
+\begin{DoxyCompactList}\small\item\em Pointer to the previous node in the deque, or NULL if this is the first node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure representing a node in a deque with PID. 
+
+This structure defines a node in a deque with Process ID (PID), containing a PID, and pointers to the next and previous nodes in the deque.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pid} & The Process ID (PID) of the current job. \\
+\hline
+{\em next} & Pointer to the next node in the deque, or NULL if this is the last node. \\
+\hline
+{\em prev} & Pointer to the previous node in the deque, or NULL if this is the first node. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{Deque__PID_8h}{Deque\+\_\+\+PID.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,46 @@
+\doxysection{errors.\+h}
+\hypertarget{errors_8h_source}{}\label{errors_8h_source}\index{src/errors.h@{src/errors.h}}
+\mbox{\hyperlink{errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ ERRORS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ ERRORS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ FileNotFoundError,}
+\DoxyCodeLine{00046\ \ \ \ \ PermissionError,}
+\DoxyCodeLine{00047\ \ \ \ \ CommandNotFoundError,}
+\DoxyCodeLine{00048\ \ \ \ \ ProcessNotFoundError,}
+\DoxyCodeLine{00049\ \ \ \ \ ProcessSpawnError,}
+\DoxyCodeLine{00050\ \ \ \ \ ArgumentNotFoundError,}
+\DoxyCodeLine{00051\ \ \ \ \ SignalNotFoundError,}
+\DoxyCodeLine{00052\ \ \ \ \ ProcessWaitError,}
+\DoxyCodeLine{00053\ \ \ \ \ StatusNotFoundError,}
+\DoxyCodeLine{00054\ \ \ \ \ PCBNotFoundError,}
+\DoxyCodeLine{00055\ \ \ \ \ ProcessStatusError,}
+\DoxyCodeLine{00056\ \ \ \ \ TooManyFilesOpenError,}
+\DoxyCodeLine{00057\ \ \ \ \ NoMoreSpaceError,}
+\DoxyCodeLine{00058\ \ \ \ \ InvalidFileDescriptorError,}
+\DoxyCodeLine{00059\ \ \ \ \ FileWriteError,}
+\DoxyCodeLine{00060\ \ \ \ \ DequeSpaceError,}
+\DoxyCodeLine{00061\ \ \ \ \ PromptError,}
+\DoxyCodeLine{00062\ \ \ \ \ FileReadError,}
+\DoxyCodeLine{00063\ \ \ \ \ FileIsOpenError,}
+\DoxyCodeLine{00064\ \ \ \ \ WrongProcessWaitedError,}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//add\ errors\ here}}
+\DoxyCodeLine{00066\ \ \ \ \ NumberOfErrors\ \textcolor{comment}{//keep\ track\ of\ errors}}
+\DoxyCodeLine{00067\ \}\ \mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\_error}};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{extern}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{errors_8h_a128258e4dbbd9ca19559087b553a9bef}{pennos\_errors}}[];}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00088\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{errors_8h_a426fc668869cc80eca1c9fd1d8f1d8a6}{mapEnumToString}}(\mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\_error}}\ error);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ ERRORS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

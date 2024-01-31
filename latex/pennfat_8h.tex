@@ -1,0 +1,393 @@
+\doxysection{src/pennfat.h File Reference}
+\hypertarget{pennfat_8h}{}\label{pennfat_8h}\index{src/pennfat.h@{src/pennfat.h}}
+
+
+Header file for Penn\+FAT filesystem and related commands.  
+
+
+{\ttfamily \#include $<$signal.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$sys/wait.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$errno.\+h$>$}\newline
+{\ttfamily \#include $<$fcntl.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$sys/mman.\+h$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include "{}p\+\_\+pennos.\+h"{}}\newline
+{\ttfamily \#include "{}parser.\+h"{}}\newline
+Include dependency graph for pennfat.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}}
+\begin{DoxyCompactList}\small\item\em Structure representing a directory entry in the Penn\+FAT filesystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{pennfat_8h_ab02840a5540ac33ef12adcd1e9c734bc}{find\+\_\+file}} (const char \texorpdfstring{$\ast$}{*}fname, \mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} \texorpdfstring{$\ast$}{*}result)
+\begin{DoxyCompactList}\small\item\em Find a file in the Penn\+FAT filesystem by name. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_ad7d7ed69af47eb0b002e693072b26b56}{touch\+\_\+single}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Creates a single file in the Penn\+FAT filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a3adfcbcf5a5d70ed675bc78968ba8564}{cat\+\_\+f\+\_\+w}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Concatenates files and writes to a specified output file, overwriting it. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a6b29c8eff3400c638d58bd732964f02b}{cat\+\_\+f\+\_\+a}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Concatenates files and appends to a specified output file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_ac94e11436283d63d475a18bb2aa7bacd}{cat\+\_\+a\+\_\+f}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Reads from the terminal and appends to a specified output file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a9399abfb6a0c4b0fe950901b9fefc267}{cat\+\_\+w\+\_\+f}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Reads from the terminal and overwrites a specified output file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a45596a00341a2e1876f3e4ed8374bcbb}{cat\+\_\+f}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Concatenates files and prints the result to stdout. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_ae5980b7c744a65233b9f0d40e2f54e39}{mkfs}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name, int blocks\+\_\+in\+\_\+fat, int block\+\_\+size\+\_\+config)
+\begin{DoxyCompactList}\small\item\em Creates a Penn\+FAT filesystem in the file named FS\+\_\+\+NAME. The number of blocks in the FAT region is BLOCKS\+\_\+\+IN\+\_\+\+FAT and the block size is 256, 512, 1024, 2048, or 4096 bytes corresponding to the value (0 through 4) of BLOCK\+\_\+\+SIZE\+\_\+\+CONFIG. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a2fe0ff1115fb73cfaef3441eb8d77426}{mount}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Mounts a Penn\+FAT filesystem by loading its FAT into memory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a5ce6198483816af4056c9369bd7ee2bb}{umount}} ()
+\begin{DoxyCompactList}\small\item\em Unmounts the currently mounted filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a7015d117ce8f78759bfec604fff427a2}{touch}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Creates or updates the timestamp of the specified files. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_accf81069c6f76cf58f0190943a1f8fea}{rm}} (const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Removes the specified file or files from the filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a420ab64c46cf779cd29a82f58706bd1f}{mv}} (const char \texorpdfstring{$\ast$}{*}src, const char \texorpdfstring{$\ast$}{*}dst)
+\begin{DoxyCompactList}\small\item\em Renames a source file to a destination file in the filesystem. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a2caea67b94a21ffec82d8e446dbe5bbf}{cp}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Copies files from the filesystem to a destination in the host OS. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_adf8ca7f5d7f140183bef5a097035fe8f}{cat\+\_\+all}} (struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}cmd)
+\begin{DoxyCompactList}\small\item\em Concatenates and prints files to stdout or overwrites/creates an output file. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_a88f42995d411b2e7042c4359cc02fc90}{ls}} ()
+\begin{DoxyCompactList}\small\item\em List the specified file or all files in the current directory. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{pennfat_8h_ad678b89d8b7959cf526e78b47657ea10}{chmod}} (const char \texorpdfstring{$\ast$}{*}mode, const char \texorpdfstring{$\ast$}{*}fs\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Changes the permissions of the specified filesystem. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for Penn\+FAT filesystem and related commands. 
+
+This file defines structures, constants, and function prototypes for interacting with the Penn\+FAT filesystem and implementing various filesystem commands such as mkfs, mount, umount, touch, rm, mv, cp, cat, ls, and chmod. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{pennfat_8h_ac94e11436283d63d475a18bb2aa7bacd}\label{pennfat_8h_ac94e11436283d63d475a18bb2aa7bacd} 
+\index{pennfat.h@{pennfat.h}!cat\_a\_f@{cat\_a\_f}}
+\index{cat\_a\_f@{cat\_a\_f}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_a\_f()}{cat\_a\_f()}}
+{\footnotesize\ttfamily int cat\+\_\+a\+\_\+f (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Reads from the terminal and appends to a specified output file. 
+
+This function reads from the terminal and appends the input to the specified output file. If the output file does not exist, it will be created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_adf8ca7f5d7f140183bef5a097035fe8f}\label{pennfat_8h_adf8ca7f5d7f140183bef5a097035fe8f} 
+\index{pennfat.h@{pennfat.h}!cat\_all@{cat\_all}}
+\index{cat\_all@{cat\_all}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_all()}{cat\_all()}}
+{\footnotesize\ttfamily int cat\+\_\+all (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Concatenates and prints files to stdout or overwrites/creates an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a45596a00341a2e1876f3e4ed8374bcbb}\label{pennfat_8h_a45596a00341a2e1876f3e4ed8374bcbb} 
+\index{pennfat.h@{pennfat.h}!cat\_f@{cat\_f}}
+\index{cat\_f@{cat\_f}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_f()}{cat\_f()}}
+{\footnotesize\ttfamily int cat\+\_\+f (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Concatenates files and prints the result to stdout. 
+
+This function concatenates the specified files and prints the result to stdout.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a6b29c8eff3400c638d58bd732964f02b}\label{pennfat_8h_a6b29c8eff3400c638d58bd732964f02b} 
+\index{pennfat.h@{pennfat.h}!cat\_f\_a@{cat\_f\_a}}
+\index{cat\_f\_a@{cat\_f\_a}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_f\_a()}{cat\_f\_a()}}
+{\footnotesize\ttfamily int cat\+\_\+f\+\_\+a (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Concatenates files and appends to a specified output file. 
+
+This function concatenates the specified files and appends the result to the output file. If the output file does not exist, it will be created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a3adfcbcf5a5d70ed675bc78968ba8564}\label{pennfat_8h_a3adfcbcf5a5d70ed675bc78968ba8564} 
+\index{pennfat.h@{pennfat.h}!cat\_f\_w@{cat\_f\_w}}
+\index{cat\_f\_w@{cat\_f\_w}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_f\_w()}{cat\_f\_w()}}
+{\footnotesize\ttfamily int cat\+\_\+f\+\_\+w (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Concatenates files and writes to a specified output file, overwriting it. 
+
+This function concatenates the specified files and writes the result to the output file. If the output file does not exist, it will be created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a9399abfb6a0c4b0fe950901b9fefc267}\label{pennfat_8h_a9399abfb6a0c4b0fe950901b9fefc267} 
+\index{pennfat.h@{pennfat.h}!cat\_w\_f@{cat\_w\_f}}
+\index{cat\_w\_f@{cat\_w\_f}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cat\_w\_f()}{cat\_w\_f()}}
+{\footnotesize\ttfamily int cat\+\_\+w\+\_\+f (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Reads from the terminal and overwrites a specified output file. 
+
+This function reads from the terminal and overwrites the specified output file. If the output file does not exist, it will be created.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cat\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_ad678b89d8b7959cf526e78b47657ea10}\label{pennfat_8h_ad678b89d8b7959cf526e78b47657ea10} 
+\index{pennfat.h@{pennfat.h}!chmod@{chmod}}
+\index{chmod@{chmod}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{chmod()}{chmod()}}
+{\footnotesize\ttfamily int chmod (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{mode,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Changes the permissions of the specified filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & The new permissions mode. \\
+\hline
+{\em fs\+\_\+name} & The name of the filesystem.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a2caea67b94a21ffec82d8e446dbe5bbf}\label{pennfat_8h_a2caea67b94a21ffec82d8e446dbe5bbf} 
+\index{pennfat.h@{pennfat.h}!cp@{cp}}
+\index{cp@{cp}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{cp()}{cp()}}
+{\footnotesize\ttfamily int cp (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Copies files from the filesystem to a destination in the host OS. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}cp\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_ab02840a5540ac33ef12adcd1e9c734bc}\label{pennfat_8h_ab02840a5540ac33ef12adcd1e9c734bc} 
+\index{pennfat.h@{pennfat.h}!find\_file@{find\_file}}
+\index{find\_file@{find\_file}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{find\_file()}{find\_file()}}
+{\footnotesize\ttfamily int find\+\_\+file (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fname,  }\item[{\mbox{\hyperlink{structdirectory__entry}{directory\+\_\+entry}} \texorpdfstring{$\ast$}{*}}]{result }\end{DoxyParamCaption})}
+
+
+
+Find a file in the Penn\+FAT filesystem by name. 
+
+This function searches for a file with the specified name in the Penn\+FAT filesystem and retrieves its directory entry information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & The name of the file to search for. \\
+\hline
+{\em result} & A pointer to a \doxylink{structdirectory__entry}{directory\+\_\+entry} structure to store the result.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the position of the file on directory on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a88f42995d411b2e7042c4359cc02fc90}\label{pennfat_8h_a88f42995d411b2e7042c4359cc02fc90} 
+\index{pennfat.h@{pennfat.h}!ls@{ls}}
+\index{ls@{ls}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{ls()}{ls()}}
+{\footnotesize\ttfamily int ls (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+List the specified file or all files in the current directory. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_ae5980b7c744a65233b9f0d40e2f54e39}\label{pennfat_8h_ae5980b7c744a65233b9f0d40e2f54e39} 
+\index{pennfat.h@{pennfat.h}!mkfs@{mkfs}}
+\index{mkfs@{mkfs}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{mkfs()}{mkfs()}}
+{\footnotesize\ttfamily int mkfs (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name,  }\item[{int}]{blocks\+\_\+in\+\_\+fat,  }\item[{int}]{block\+\_\+size\+\_\+config }\end{DoxyParamCaption})}
+
+
+
+Creates a Penn\+FAT filesystem in the file named FS\+\_\+\+NAME. The number of blocks in the FAT region is BLOCKS\+\_\+\+IN\+\_\+\+FAT and the block size is 256, 512, 1024, 2048, or 4096 bytes corresponding to the value (0 through 4) of BLOCK\+\_\+\+SIZE\+\_\+\+CONFIG. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the filesystem to be created. \\
+\hline
+{\em blocks\+\_\+in\+\_\+fat} & The number of blocks in the FAT region (1-\/32) \\
+\hline
+{\em block\+\_\+size\+\_\+config} & The block size configuration.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a2fe0ff1115fb73cfaef3441eb8d77426}\label{pennfat_8h_a2fe0ff1115fb73cfaef3441eb8d77426} 
+\index{pennfat.h@{pennfat.h}!mount@{mount}}
+\index{mount@{mount}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{mount()}{mount()}}
+{\footnotesize\ttfamily int mount (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Mounts a Penn\+FAT filesystem by loading its FAT into memory. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the filesystem to be mounted.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a420ab64c46cf779cd29a82f58706bd1f}\label{pennfat_8h_a420ab64c46cf779cd29a82f58706bd1f} 
+\index{pennfat.h@{pennfat.h}!mv@{mv}}
+\index{mv@{mv}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{mv()}{mv()}}
+{\footnotesize\ttfamily int mv (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{src,  }\item[{const char \texorpdfstring{$\ast$}{*}}]{dst }\end{DoxyParamCaption})}
+
+
+
+Renames a source file to a destination file in the filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & The source file to be renamed. \\
+\hline
+{\em dst} & The destination file name.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_accf81069c6f76cf58f0190943a1f8fea}\label{pennfat_8h_accf81069c6f76cf58f0190943a1f8fea} 
+\index{pennfat.h@{pennfat.h}!rm@{rm}}
+\index{rm@{rm}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{rm()}{rm()}}
+{\footnotesize\ttfamily int rm (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Removes the specified file or files from the filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the file or files to be removed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a7015d117ce8f78759bfec604fff427a2}\label{pennfat_8h_a7015d117ce8f78759bfec604fff427a2} 
+\index{pennfat.h@{pennfat.h}!touch@{touch}}
+\index{touch@{touch}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{touch()}{touch()}}
+{\footnotesize\ttfamily int touch (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structparsed__command}{parsed\+\_\+command}} \texorpdfstring{$\ast$}{*}}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Creates or updates the timestamp of the specified files. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cmd} & A parsed command structure containing information about the \textquotesingle{}touch\textquotesingle{} command.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_ad7d7ed69af47eb0b002e693072b26b56}\label{pennfat_8h_ad7d7ed69af47eb0b002e693072b26b56} 
+\index{pennfat.h@{pennfat.h}!touch\_single@{touch\_single}}
+\index{touch\_single@{touch\_single}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{touch\_single()}{touch\_single()}}
+{\footnotesize\ttfamily int touch\+\_\+single (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{fs\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Creates a single file in the Penn\+FAT filesystem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em fs\+\_\+name} & The name of the file to create.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}
+\Hypertarget{pennfat_8h_a5ce6198483816af4056c9369bd7ee2bb}\label{pennfat_8h_a5ce6198483816af4056c9369bd7ee2bb} 
+\index{pennfat.h@{pennfat.h}!umount@{umount}}
+\index{umount@{umount}!pennfat.h@{pennfat.h}}
+\doxysubsubsection{\texorpdfstring{umount()}{umount()}}
+{\footnotesize\ttfamily int umount (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Unmounts the currently mounted filesystem. 
+
+\begin{DoxyReturn}{Returns}
+Returns 0 on success, or a negative value on failure. 
+\end{DoxyReturn}

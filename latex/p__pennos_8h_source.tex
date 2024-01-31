@@ -1,0 +1,77 @@
+\doxysection{p\+\_\+pennos.\+h}
+\hypertarget{p__pennos_8h_source}{}\label{p__pennos_8h_source}\index{src/p\_pennos.h@{src/p\_pennos.h}}
+\mbox{\hyperlink{p__pennos_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#ifndef\ P\_PENNOS\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ P\_PENNOS\_H}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ \_XOPEN\_SOURCE\ 500}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ MAX\_OPEN\_FILES\ 1024}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <signal.h>}\ \ \ \ \ \textcolor{comment}{//\ sigaction,\ sigemptyset,\ sigfillset,\ signal}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ \textcolor{comment}{//\ dprintf,\ fputs,\ perror}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \textcolor{comment}{//\ malloc,\ free}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <sys/time.h>}\ \ \ \textcolor{comment}{//\ setitimer}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <ucontext.h>}\ \ \ \textcolor{comment}{//\ getcontext,\ makecontext,\ setcontext,\ swapcontext}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <unistd.h>}\ \ \ \ \ \textcolor{comment}{//\ read,\ usleep,\ write}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{signals_8h}{signals.h}}"{}}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#include\ "{}parser.h"{}}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{errors_8h}{errors.h}}"{}}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_ae0d21d9a2ef4a21a7b731ae1befd6ab0}{p\_system\_init}}(\textcolor{keywordtype}{void}\ (*shell\_func)());}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00058\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_a5a1643c03e7ddbc893f88c6510cb6f1d}{p\_spawn}}(\textcolor{keywordtype}{void}\ (*func)(),\ \textcolor{keywordtype}{char}\ *argv[],\ \textcolor{keywordtype}{int}\ fd0,\ \textcolor{keywordtype}{int}\ fd1,\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00075\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_a8ddf9a2934c3397ab06f48872bc24ce6}{p\_waitpid}}(pid\_t\ pid,\ \textcolor{keywordtype}{int}\ *wstatus,\ \textcolor{keywordtype}{bool}\ nohang);}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{p__pennos_8h_af554875b303d6cca9d6fc82d7ed8ded1}{p\_kill}}(pid\_t\ pid,\ \mbox{\hyperlink{signals_8h_a1a4e0dd5d9b66b722ab954f8fb31bb7b}{pennos\_signal}}\ sig);}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_abab29a9906bac0b035d41a3c067d9c36}{p\_exit}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00108\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{p__pennos_8h_a04ac94d68aaa795abdeed08f2d9481a3}{p\_nice}}(pid\_t\ pid,\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00122\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_a7331769e7fe7bd974a8d3aea1f795f81}{p\_sleep}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ ticks);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_ad4d04753cebddc03484466627af3da5d}{p\_print}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00141\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_a2a3a513b524cc123d547446475e07e7c}{p\_jobs}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00153\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_a6fbda21a6b0ed9ae8d9aa33ebffe476a}{p\_fg}}(pid\_t\ pid);}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00166\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_aaf18f7e97b0a2783ba3d9e4ef54bfc17}{p\_bg}}(pid\_t\ pid);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00178\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_a8f7e37af5a7aea56371b274c6521e1d3}{p\_perror}}(\textcolor{keywordtype}{char}\ *message,\ \mbox{\hyperlink{errors_8h_ab5c6249e0c8c0c9222b6c8e8237604e1}{pennos\_error}}\ err);}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00188\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{p__pennos_8h_a1dcf1f6a075b40cbce6b6a863e922ffe}{get\_pcb\_name\_from\_pid}}(pid\_t\ pid);}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{p__pennos_8h_a8c5af11bcd6a690c744a7e1e4403f8e3}{W\_WIFEXITED}}(\textcolor{keywordtype}{int}\ status);}
+\DoxyCodeLine{00201\ }
+\DoxyCodeLine{00211\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{p__pennos_8h_a9b5d1562ba4d742ff9d37e8781b54529}{W\_WIFSTOPPED}}(\textcolor{keywordtype}{int}\ status);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00213\ }
+\DoxyCodeLine{00224\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{p__pennos_8h_ac75d18a59a2241cfb241f21370851693}{W\_WIFSIGNALED}}(\textcolor{keywordtype}{int}\ status);}
+\DoxyCodeLine{00225\ }
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00244\ pid\_t\ \mbox{\hyperlink{p__pennos_8h_a74a995a7d7da779a432f01631b6ec55c}{p\_spawn\_cmd}}(\textcolor{keywordtype}{void}\ (*func)(),\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{structparsed__command}{parsed\_command}}\ *cmd,\ \textcolor{keywordtype}{int}\ fd0,\ \textcolor{keywordtype}{int}\ fd1,\ \textcolor{keywordtype}{char}*\ name);}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00255\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_adcefa82cd6f411263cfa65fdb367e3a7}{start\_os}}();}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00264\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_ae8f11c71750ea6bdfe274ef74b43dab0}{p\_logout}}();}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00273\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_ae3080d953002523e765e3954f3bdb955}{p\_man}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}**\ func\_names);}
+\DoxyCodeLine{00274\ }
+\DoxyCodeLine{00284\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_abbbfd069e63bd7a9591686bfb136aff0}{p\_background\_wait}}(\textcolor{keywordtype}{int}\ case\_value,\ \textcolor{keywordtype}{int}\ background\_id,\ \textcolor{keywordtype}{char}*\ waited\_pid\_name);}
+\DoxyCodeLine{00293\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{p__pennos_8h_a95db0c73b3de95e4a06b318ad50f5565}{p\_background\_status}}(\textcolor{keywordtype}{int}\ current\_background\_id,\ \textcolor{keywordtype}{int}\ pid);}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ P\_PENNOS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

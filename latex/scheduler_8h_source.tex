@@ -1,0 +1,39 @@
+\doxysection{scheduler.\+h}
+\hypertarget{scheduler_8h_source}{}\label{scheduler_8h_source}\index{src/scheduler.h@{src/scheduler.h}}
+\mbox{\hyperlink{scheduler_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ SCHEDULER\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ SCHEDULER\_H}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ \_XOPEN\_SOURCE\ 500}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ <signal.h>}\ \ \ \ \ \textcolor{comment}{//\ sigaction,\ sigemptyset,\ sigfillset,\ signal}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <stdio.h>}\ \ \textcolor{comment}{//\ dprintf,\ fputs,\ perror}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdlib.h>}\ \ \ \ \ \textcolor{comment}{//\ malloc,\ free}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <sys/time.h>}\ \ \ \textcolor{comment}{//\ setitimer}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <ucontext.h>}\ \ \ \textcolor{comment}{//\ getcontext,\ makecontext,\ setcontext,\ swapcontext}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <unistd.h>}\ \ \ \ \ \textcolor{comment}{//\ read,\ usleep,\ write}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ <valgrind/valgrind.h>}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pcb_8h}{pcb.h}}"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{signals_8h}{signals.h}}"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ setStack(stack\_t\ *stack);}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00032\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scheduler_8h_a7fc6036ab9e0db6b4e267c76289e7c50}{schedule\_ready\_process}}(\mbox{\hyperlink{structpcb__struct}{PCB}}*\ pcb);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scheduler_8h_afa041844ed347d6a5b1008c497227e63}{set\_priority}}(\mbox{\hyperlink{structpcb__struct}{PCB}}*\ pcb,\ \textcolor{keywordtype}{int}\ priority);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scheduler_8h_a1d359e30ae7f170055defd0118d83f76}{scheduler\_main}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scheduler_8h_aa7b40fd54e801b871380c5368a0a80c2}{init\_scheduler}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ pid\_t\ \mbox{\hyperlink{scheduler_8h_a420dfea2ef8ce4768c9b70bb22207bb9}{get\_last\_stopped\_pcb}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00071\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{scheduler_8h_a94daf90f77250ad01516b0f71b9ee84c}{schedule\_sleep\_process}}(\mbox{\hyperlink{structpcb__struct}{PCB}}*\ pcb,\ \mbox{\hyperlink{signals_8h_a1a4e0dd5d9b66b722ab954f8fb31bb7b}{pennos\_signal}}\ sig);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{scheduler_8h_aa69da23674d389fe57b815cff1599d72}{waitpid\_checks}}(\mbox{\hyperlink{structpcb__struct}{PCB}}*\ pcb);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SCHEDULER\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
